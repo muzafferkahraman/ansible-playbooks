@@ -1,0 +1,9 @@
+-   hosts: target-machines
+     vars:
+       vm2_ip: 192.168.130.242
+       vm3_ip: 192.168.130.243
+     tasks:
+     - name: Construct ifcfg file
+         template:
+           src: eth2.j2
+           dest: /etc/sysconfig/network-scripts/ifcfg-eth2
