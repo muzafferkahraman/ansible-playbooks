@@ -1,0 +1,4 @@
+- name: delete file
+  file:
+    path: /root/muzo
+    state: absent
