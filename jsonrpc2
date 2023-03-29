@@ -1,0 +1,27 @@
+- name: A basic configuration change
+  hosts: localhost
+  gather_facts: no
+  vars:
+    devices:
+      - 172.20.20.8
+      - 172.20.20.9
+      - 172.20.20.10
+  tasks:
+    - name: Set mgmt0 interface description
+      uri:
+        url: http://{{ item }}/jsonrpc
+        url_username: admin
+        url_password: admin
+        method: POST
+        body:
+          jsonrpc: "2.0"
+          id: 1
+          method: "set"
+          params:
+            commands:
+              - action: update
+                path: /interface[name=mgmt0]/description:my-description
+        body_format: json
+      loop: "{{devices}}"
+      register: version_result
+
