@@ -1,0 +1,8 @@
+- jtdub.requests.uri:
+    method: GET
+    url: https://google.com/
+- jtdub.requests.uri:
+    method: GET
+    url: https://bgpstuff.net/totals?format=json
+    headers:
+      Content-type: "application/json"
