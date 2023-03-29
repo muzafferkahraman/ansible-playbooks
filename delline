@@ -1,0 +1,5 @@
+- name: delete line
+    lineinfile:
+      path: /root/deneme
+      regexp: '(^Muzo\s)(.*)$'
+      state: absent
