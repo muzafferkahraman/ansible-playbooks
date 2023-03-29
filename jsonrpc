@@ -1,0 +1,26 @@
+- name: Testing
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Get srl version
+      ansible.builtin.uri:
+        url: http://172.20.20.2/jsonrpc
+        url_username: admin
+        url_password: admin
+        method: POST
+        body:
+          jsonrpc: "2.0"
+          id: 1
+          method: get
+          params:
+            commands:
+              - path: /system/information/version
+                datastore: state
+        body_format: json
+      register: version_result
+    - ansible.builtin.debug:
+        var: version_result.json.result
+    - name: print
+      debug:
+        msg: "{{version_result.json.result}}"
