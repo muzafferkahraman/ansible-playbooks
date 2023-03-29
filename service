@@ -1,0 +1,9 @@
+  - name: service
+    service:
+      name:  rsyslog
+      state: started
+  - name: Activate firewalld
+    systemd:
+      name: firewalld
+      activated: yes
+      masked: no
