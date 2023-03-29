@@ -1,0 +1,2 @@
+- name: command2
+    shell: echo {{name}} >> muzo
