@@ -1,0 +1,3 @@
+- name: copy
+    copy:
+      src: /root/muzo.sh dest: /tmp/muzo.sh mode: 0755
