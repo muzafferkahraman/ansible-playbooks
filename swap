@@ -1,0 +1,7 @@
+- name: de
+    replace:
+      path: /root/deneme
+      regexp: '(^Muzaffer\s)(.*)$'
+      replace: 'Muzo'
+      line:  'Muzaffer'
+      insertafter: 'Bilal'
