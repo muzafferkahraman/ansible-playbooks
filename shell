@@ -1,0 +1,3 @@
+  - name: command
+    shell: sh /muzo.sh
+    shell: sr_cli show interface > /muzo
