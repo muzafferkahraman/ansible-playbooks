@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  vars:
+    vsd_auth:
+       api_username: csproot
+       api_password: csproot
+       api_enterprise: csp
+       api_url: https://135.228.6.157:8443
+       api_version: v6
+    enterprise_name: muzokahraman
+  tasks:
+  - name: Finding Enterprise
+    connection: local
+    nuage_vspk:
+      auth: "{{ vsd_auth }}"
+      type: Enterprise
+      state: present
+      properties:
+        name: "{{ enterprise_name }}"
+    register: nuage_enterprise
