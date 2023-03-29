@@ -1,0 +1,8 @@
+  - name: file construct
+    vars:
+       FILE: "/tmp/ifcfg-br0"
+    shell:
+       cmd: |
+           cat <<EOM > {{FILE}}
+           MUZO=MUZAFFER
+           EOM
