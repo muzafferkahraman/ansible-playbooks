@@ -1,0 +1,7 @@
+---
+- hosts: webservers
+  tasks:
+  - name: yum
+    yum: name=hping3 state=latest update_cache=yes
+    shell: date > deneme 
+    shell: date > {{ file }}
